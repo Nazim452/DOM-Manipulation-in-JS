@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://www.unpkg.com/shery-js@1.0.0-alpha.0.5/dist/Shery.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        *::selection {
+            color: #fff;
+            background-color: #000;
+        }
+
+        #main {
+
+            width: 100%;
+            background-color: #fff;
+
+        }
+
+        #home {
+            width: 100%;
+            min-height: 100vh;
+
+        }
+
+        #nav {
+            width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        #nav img {
+            width: 100px;
+            background: transparent;
+        }
+
+        #nav a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #000;
+            font-size: 1vw;
+        }
+
+        #nav #right {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        #home #home-main {
+            width: 100%;
+            padding: 15vw 15vw;
+
+        }
+
+        #home-main h2 {
+            font-weight: 400;
+            font-size: 1.5vw;
+
+        }
+        #home-main .heading h1:hover{
+            color: #000;
+        }
+
+        .heading {
+            display: flex;
+            gap: 40px;
+
+        }
+
+        #home-main .heading h1 {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #000;
+            font-size: 5vw;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+
+        #home-last {
+            padding: 0vw 15vw;
+        }
+
+        #home-last p {
+            font-size: 1.6vw;
+            font-weight: 300;
+            width: 70%;
+
+        }
+
+        #home-last p::selection {
+            color: #fff;
+            background-color: #000;
+        }
+
+        #featured {
+            padding: 10vw 15vw;
+
+
+        }
+
+        .fheading>h1 {
+            line-height: 1;
+            font-size: 4vw;
+            font-weight: 400;
+
+        }
+
+        .fheading>h1:nth-child(2) {
+            color: transparent;
+            -webkit-text-stroke: 1px #000;
+            letter-spacing: -1px;
+        }
+
+        #fimage {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            height: 100vh;
+            margin-top: 5vw;
+        }
+
+        #fleft {
+            overflow: hidden;
+            width: 45%;
+            height: inherit;
+
+
+
+        }
+
+        #fright {
+
+            width: 45%;
+            height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+        }
+
+        #fright .image {
+            width: 90%;
+            height: 80%;
+           
+        }
+        #fright .image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fleftelem {
+            width: 100%;
+            height: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fleftelem h1 {
+            font-size: 2.5vw;
+            line-height: 1;
+            font-weight: 400;
+            text-transform: capitalize;
+            margin: 2vw 0;
+
+        }
+
+        .fleftelem h3 {
+            font-size: 1.3vw;
+            font-size: 400;
+        }
+
+        .fleftelem h5 {
+            opacity: 0.7;
+        }
+
+        .btndiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btndiv button {
+            padding: 1vw 2vw;
+            border-radius: 100px;
+            border: 2px solid gray;
+            font-weight: 500px;
+            background-color: #fff;
+
+
+        }
+
+        #dev h1 {
+            font-size: 3.8vw;
+            font-weight: 40-0;
+            width: 50%;
+            line-height: 1;
+            margin-top: 3vw;
+
+        }
+
+        #dev p {
+            font-size: 1.5vw;
+            margin-top: 3vw;
+            width: 60%;
+
+        }
+
+        #slides{
+            padding: 3vw 10vw;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .slide{
+            width: 30%;
+            /* height: 100px; */
+            /* background-color: red; */
+        }
+        .slide .img{
+            width: 100%;
+            height: 270px;
+            background-color: yellow;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slide .tag{
+            width: fit-content;
+            border-radius: 100px;
+            padding:  10px 22px;
+            background-color: #ac9999;
+            margin: 20px 0;
+        }
+        .slide .img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        .slide h3{
+            font-size: 1.4vw;
+            font-weight: 400;
+
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="home">
+            <!-- <div id="nav">
+                <img  class="magnet"src="https://tse1.mm.bing.net/th?id=OIP.X6nuCK74srssPN7lVrqbvwAAAA&pid=Api&P=0&h=180" alt="">
+
+                <div id="right">
+                    <a href="">Our showreel</a>
+                    <a href="">Menu</a>
+                    <i class="ri-menu-fill magnet"></i>
+                </div>
+
+            </div> -->
+<!-- 
+            <div id="home-main">
+                <h2>We Make it happen</h2>
+                <div class="heading">
+                    <h1 class="hvr">Website</h1>
+                    <h1 class="hvr">Apps</h1>
+                    <h1 class="hvr">Branding</h1>
+                </div>
+            </div>
+            <div id="home-last">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit est placeat quis amet expedita
+                    similique tempore aut quibusdam magni voluptate.</p>
+            </div>
+        </div> -->
+
+
+        <div id="featured">
+            <!-- <div class="fheading">
+
+                <h1>featured</h1>
+                <h1>Project</h1>
+            </div> -->
+
+            <div id="fimage">
+                <div id="fleft">
+                    <div class="fleftelem">
+                        <h3>Riyadh</h3>
+                        <h1>Officila website of riyadh, Saudi Arabia's Capital</h1>
+                        <h5>Design, development</h5>
+                    </div>
+                    <div class="fleftelem">
+                        <h3>Riyadh</h3>
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, eos.</h1>
+                        <h5>Design</h5>
+                    </div>
+                    <div class="fleftelem">
+                        <h3>Riyadh</h3>
+                        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, accusantium!</h1>
+                        <h5>Design---- development</h5>
+                    </div>
+                    <div class="fleftelem last">
+                        <h3>Riyadh</h3>
+                        <h1>Officila website of riyadh, Saudi Arabia's Capital</h1>
+                        <h5>Design, development</h5>
+                    </div>
+
+                </div>
+                <div id="fright">
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1509205206130-24819154d9e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJlYXV0aWZ1bCUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                        <img src="https://images.unsplash.com/photo-1534794420636-dbc13b8a48d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlYXV0aWZ1bCUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                        <img src="https://images.unsplash.com/photo-1561742139-77a5a42cc97b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVhdXRpZnVsJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                        <img src="https://images.unsplash.com/photo-1536063211352-0b94219f6212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="btndiv magnet">
+                <button>View all product</button>
+            </div>
+            <div id="dev">
+                <h1>Development and design resource</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus quae itaque debitis tempore,
+                    cumque alias vel. Et explicabo veritatis itaque!</p>
+            </div> -->
+
+
+
+        </div>
+
+        
+<!-- 
+        <div id="slides">
+            <div class="slide">
+                <div class="img">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.iqgt7lgWbV5Y8wMMIbzW9AHaEo&pid=Api&P=0&h=180" alt="">
+                </div>
+                <div class="tag">Design course</div>
+                <h3>How to make Epic website// frontend developer</h3>
+
+            </div>
+       
+        
+            <div class="slide">
+                <div class="img">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.iqgt7lgWbV5Y8wMMIbzW9AHaEo&pid=Api&P=0&h=180" alt="">
+                </div>
+                <div class="tag">Design course</div>
+                <h3>How to make Epic website// frontend developer</h3>
+
+            </div>
+        
+       
+            <div class="slide">
+                <div class="img">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.iqgt7lgWbV5Y8wMMIbzW9AHaEo&pid=Api&P=0&h=180" alt="">
+                </div>
+                <div class="tag">Design course</div>
+                <h3>How to make Epic website// frontend developer</h3>
+
+            </div>
+        </div>
+        <div class="btndiv magnet">
+            <button>View all product</button>
+        </div> -->
+
+     
+
+
+    </div>
+
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"
+        integrity="sha512-auFmPm+de880vk/c+bgBmuOnQ7BM28z7zPWmepVgX8737t75OHZjElOnQqERwP8cE4DIyCJ+gb1kE0b/eLWcnA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script src="https://www.unpkg.com/shery-js@1.0.0-alpha.0.5/dist/Shery.js"></script>
+    <script src="scrollScript.js"></script>
+
+</body>
+
+</html>

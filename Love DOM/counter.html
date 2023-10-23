@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+             margin:0;
+             padding:0;
+             box-sizing:border-box;
+             font-family:'arial';
+          }
+         
+        body{
+        height:100%;
+        width:100%;
+        background-color:#000;
+        }
+        .counter {
+            display: flex;
+        }
+        .main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+        }
+        button{
+            cursor: pointer;
+            height: 40px;
+            width: 80px;
+            background-color: blanchedalmond;
+            margin-right: 30px;
+            margin-left: 40px;
+
+        }
+        .num{
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+   <div class="counter">
+    <button class="adding">Add</button>
+    <div  class="num">1</div>
+    <button class="subtract">Sub</button>
+   </div>
+
+</div>
+
+<script>
+
+    let count = document.querySelector(".num");
+    let add = document.querySelector(".adding");
+    add.addEventListener('click',function(){
+       count.innerHTML++ ;
+    })
+
+    let sub = document.querySelector(".subtract");
+    sub.addEventListener("click", function(){
+        count.innerHTML-- ;
+    })
+
+   
+
+
+
+</script>
+</body>
+</html>
